@@ -8,6 +8,8 @@ var weeks;
 var month;
 var years;
 var dt;
+try{
+  dtime();
 
 var dmonth = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31, }
 var dsmonth = {0:0, 1:31, 2:59, 3:90, 4:120, 5:151, 6:181, 7:212, 8:243, 9:273, 10:304, 11:334, 12:365, }
@@ -50,9 +52,11 @@ function dtime(){
   p6.innerHTML = years;
   p7.innerHTML = dt;
 }
-try{
-  dtime();
-}catch(e){
+
+
+setInterval(dtime, 2);
+  
+  
+ }catch(e){
   alert(e);
 }
-setInterval(dtime, 2);
