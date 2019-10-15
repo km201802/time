@@ -8,12 +8,10 @@ var weeks;
 var month;
 var years;
 var dt;
-try{
-  dtime();
 
 var dmonth = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31, }
 var dsmonth = {0:0, 1:31, 2:59, 3:90, 4:120, 5:151, 6:181, 7:212, 8:243, 9:273, 10:304, 11:334, 12:365, }
-var months = { 1"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 
+var months = { 1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 
               8:"August", 9:"September", 10:"October", 11:"November", 12:"December", }
 
 var p1 = document.getElementById("p1");
@@ -37,7 +35,7 @@ function dtime(){
   ldays = (date.getTime()-(Math.floor(years)*365*24*60*60*1000))/1000/60/60/24;
   for(var i=1; i<Object.keys(dsmonth).length; i++){
     if(ldays<dsmonth[i]){
-      month = months[i]; 
+      month = i; 
     }
   }
 
@@ -56,7 +54,3 @@ function dtime(){
 
 setInterval(dtime, 2);
   
-  
- }catch(e){
-  alert(e);
-}
