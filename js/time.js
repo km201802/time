@@ -35,8 +35,8 @@ function dtime(){
   
   ldays = (date.getTime()-(Math.floor(years)*365*24*60*60*1000))/1000/60/60/24;
   for(var i=1; i<Object.keys(dsmonth).length; i++){
-    if(ldays<dsmonth){
-      month = months[1]; 
+    if(ldays<dsmonth[i]){
+      month = months[i]; 
     }
   }
 
