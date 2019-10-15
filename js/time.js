@@ -6,7 +6,14 @@ var hours;
 var days;
 var weeks;
 var m = [];
+var mo
 var years;
+var dt;
+
+var dmonth = { 0:0, 1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31, }
+var dsmonth = { 0:0, 1:31, 2:59, 3:90, 4:120, 5:151, 6:181, 7:212, 8:243, 9:273, 10:304, 11:334, 12:365, }
+var months = { 1"January", 2:"February", 3:"March", 4:"April", 5:"May", 6:"June", 7:"July", 
+              8:"August", 9:"September", 10:"October", 11:"November", 12:"December", }
 
 var p1 = document.getElementById("p1");
 var p2 = document.getElementById("p2");
@@ -14,6 +21,7 @@ var p3 = document.getElementById("p3");
 var p4 = document.getElementById("p4");
 var p5 = document.getElementById("p5");
 var p6 = document.getElementById("p6");
+var p7 = document.getElementById("p7");
 
 function dtime(){
   var date = new Date();
@@ -25,12 +33,15 @@ function dtime(){
   weeks = days/7;
   years = days/365;
   
+  dt = month+"/"+Math.floor(years);
+  
   p1.innerHTML = mills;
   p2.innerHTML = secs;
   p3.innerHTML = hours;
   p4.innerHTML = days;
   p5.innerHTML = weeks;
   p6.innerHTML = years;
+  p7.innerHTML = dt;
 }
 dtime();
 setInterval(dtime, 2);
