@@ -50,5 +50,9 @@ function dtime(){
   p6.innerHTML = years;
   p7.innerHTML = dt;
 }
-dtime();
+try{
+  dtime();
+}catch(e){
+  alert(e);
+}
 setInterval(dtime, 2);
