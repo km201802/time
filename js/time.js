@@ -6,7 +6,6 @@ var hours;
 var days;
 var weeks;
 var month;
-var mo
 var years;
 var dt;
 
